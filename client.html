@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+	<link type= "text/css" href= "page.css" rel = "stylesheet"></link>
+	<script src= "/socket.io/socket.io.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.4.0/seedrandom.min.js">
+	</script>
+	<script>
+	var socket = io.connect();
+
+	socket.on("init", function(data) {
+		console.log(data);
+	})
+	</script>
+	<script src= "burst.js"></script>
+	
+</head>
+<body onload = "canvasOnStart()">
+</body>
+</hmtl>
