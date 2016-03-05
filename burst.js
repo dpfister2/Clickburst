@@ -30,7 +30,7 @@ function onClick(event) { //sends location of mouseclick to server
 function Particle(x, y, randomX, randomY) {
 	this.x = x;
 	this.y = y;
-	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))]; //creates same "random" color for all connections
+	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))]; //attributes same color for all connections
 	this.velocityX = randomX;
 	this.velocityY = randomY;
 	this.isAlive = true;
