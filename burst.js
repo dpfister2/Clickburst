@@ -30,13 +30,13 @@ function onClick(event) { //sends location of mouseclick to server
 function Particle(x, y, randomX, randomY) {
 	this.x = x;
 	this.y = y;
-	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))]; //a "random" number that is uniform over all connections
+	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))]; //creates same "random" color for all connections
 	this.velocityX = randomX;
 	this.velocityY = randomY;
 	this.isAlive = true;
 }
 
-socket.on("randomNumbered", function(data) { //receives "random" number and adds 100 particles to array that are "randomized" based off number
+socket.on("randomNumbered", function(data) { //receives "random" number, adds 100 particles that are "randomized" based off number
 	var x = data.x;
 	var y = data.y;
 	var random = data.random; 
