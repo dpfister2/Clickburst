@@ -9,7 +9,7 @@ app.use(express.static(__dirname ));
 
 io.sockets.on("connection", function (socket) {
 
-	socket.emit("init", "Connected");
+	socket.emit("init", "Connected");	
 
 	socket.on("clicked", function(data) {
 		var x = data.client_x;
@@ -17,6 +17,6 @@ io.sockets.on("connection", function (socket) {
 
 		var random = Math.floor(Math.random()*5000);
 
-		io.sockets.emit("randomNumbered", {x: x, y: y, random: random});
+		io.sockets.emit("randomNumbered", {x: x, y: y, random: random}); //returns values to all connected computers
 	})
 })

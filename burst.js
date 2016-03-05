@@ -9,7 +9,7 @@ var color = [
 				"rgb(255,255,255)"
 			]
 
-function canvasOnStart(){
+function canvasOnStart(){ //creates canvas, adds listener for click, and starts loop to update time
 	c = document.createElement("canvas");
 	document.body.style.backgroundColor = "black";
 	ctx = c.getContext("2d");
@@ -21,7 +21,7 @@ function canvasOnStart(){
 	setInterval(loop, 17);
 }
 
-function onClick(event) {
+function onClick(event) { //sends location of mouseclick to server
 	client_x = event.pageX;
 	client_y = event.pageY;
 	socket.emit("clicked", {client_x, client_y});
@@ -30,23 +30,23 @@ function onClick(event) {
 function Particle(x, y, randomX, randomY) {
 	this.x = x;
 	this.y = y;
-	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))];
+	this.color = color[Math.abs(Math.floor(Math.cos(randomX/randomY)*(color.length)))]; //a "random" number that is uniform over all connections
 	this.velocityX = randomX;
 	this.velocityY = randomY;
 	this.isAlive = true;
 }
 
-socket.on("randomNumbered", function(data) {
+socket.on("randomNumbered", function(data) { //receives "random" number and adds 100 particles to array that are "randomized" based off number
 	var x = data.x;
 	var y = data.y;
-	var random = data.random;
-	Math.seedrandom(random);
+	var random = data.random; 
+	Math.seedrandom(random); //uses random number generator library
 	for (var i = 0; i < 100; i++) {
 		particles.push(new Particle(x, y, Math.random()-.5, Math.random()-.5));
 	}
 })
 
-function update(deltaMs) {
+function update(deltaMs) { //renders canvas, updates particles location, and removes particles that won't appear on screen again
 	render();
 	for (var i = 0; i < particles.length; i++) {
 
@@ -66,7 +66,7 @@ function update(deltaMs) {
 	particles = particles.filter(function(a) {return a.isAlive});
 }
 
-function render(){
+function render(){ //draws particles
 	ctx.clearRect(0, 0, c.width, c.height);
 	for (var i = 0; i < particles.length; i++) {
 		ctx.beginPath();
@@ -76,7 +76,7 @@ function render(){
 	}
 }
 
-function loop() {
+function loop() { //Passes the change in time since last loop to update function
 
 	var now = Date.now();
 	var deltaMs = (now - last);
