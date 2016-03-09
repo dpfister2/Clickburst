@@ -1,0 +1,22 @@
+{
+  "name": "clickburst",
+  "version": "1.0.0",
+  "description": "syncronous particle explosions",
+  "main": "burst.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpfister2/Clickburst.git"
+  },
+  "author": "David Pfister",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpfister2/Clickburst/issues"
+  },
+  "homepage": "https://github.com/dpfister2/Clickburst#readme"
+}
