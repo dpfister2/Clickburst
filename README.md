@@ -1,4 +1,4 @@
-# ${1:Clickburst}
+# Clickburst
 
 Asyncronous particle explosions over connected computers on local network using nodejs, expressjs, and socket.io
 
