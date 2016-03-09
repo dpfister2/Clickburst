@@ -6,9 +6,10 @@ Asyncronous particle explosions over connected computers on local network using 
 
 1. Pull Project to folder
 2. In terminal cd to project root, run "npm install"
-3. Go to localhost:8000/client.html on host web browser or connect to the web server remotely
-4. Open up multiple windows to view
-4. Click
+3. Run node server
+4. Go to localhost:8000/client.html on host web browser or connect to the web server remotely
+5. Open up multiple windows to view
+6. Click
 
 ## Node Modules
 
