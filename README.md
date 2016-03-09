@@ -11,3 +11,6 @@ Asyncronous particle explosions over connected computers on local network using 
 3.) Goto localhost:8000/client.html in web browser
 4.) Click
 
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
